@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: About Me  
 ---
@@ -49,7 +49,6 @@ My creative plans for the future include streaming my experiments with Photoshop
 <p> 
 
 <p> 
-
 
 {% include comments.html %}
 
