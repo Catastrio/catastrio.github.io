@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Testing my post"
-date: 2015-09-26 18:15:06
+date: 2017-11-07
 description: "test post"
 tag: test
 ---
 
-This is a test
+## This is a test
 
-#Header test
+I hope it works!
