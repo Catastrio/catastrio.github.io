@@ -1,70 +1,35 @@
-﻿# Basic
-title: Michael Cassio
-subtitle: Never Complete
-description: Excuse my charisma~
-# 头像里面的标题
-avatarTitle: Catastrio
-# 头像里面的描述
-avatarDesc: Programmer / Writer
-url: "http://oissactesting.tk"
+future: true
 
-# Comment
-comment:
-    disqus: catastrio
-    # uyan: 2143225  # 有言id,登录有言官网申请
+# core settings
+title: David Young
+email: me@davidyoung.tech
+email_address: me@davidyoung.tech
 
-# Social
-social:
-    # weibo: N/A
-    github: Catastrio
-    twitter: Catastrio
-    mail: catastrio@gmail.com
+# bio's
+description: > # this means to ignore newlines until "baseurl:"
+  David Young is a Web Developer based in Brisbane, Australia 
+  with a keen interest in Website Development and Design trying to make the web faster.
+short_description: "David Young is a Web Developer based in Brisbane, Australia with a keen interest in Website Development and Design."
+base_keywords: "web, developer, blog, web developer, brisbane, australia, david, young, david young"
 
-# 百度统计 
-# 使用博客模板请去掉或者更换 id 
-baidu:
-    id:  
+# URLs
+baseurl: "" # subpath, eg /blog
+url: "https://davidyoung.tech" # base url
+theme_colour: "#F4F2F0"
 
-# Google Analytics
-# 使用博客模板请去掉或者更换 id
-ga:
-    id: 
-    host: auto  
+# usernames
+twitter_username: dayvidwhy
+github_username:  dayvidwhy
 
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
 
-# 《----------------- 上面的信息修改成你自己的 ---------------------------》
-#
-#
-#  _post/ 下的文章更换成你自己的文章
-#  帮忙star一下，感谢~😆 地址： https://github.com/leopardpan/leopardpan.github.io
-#
-#
-# 《--------------- 下面的信息可以自行选择是否修改 ------------------------》
-
-
-permalink: /:year/:month/:title/
-# Format
-highlighter: rouge
-
-textColor: #FF0000
-
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: clear
-
-# The blog button should not be removed.
-blog_button:
-    title: Blog Homepage
-
-# Navigation buttons in the front page.s
-nav:
-    - {title: All Articles, description: archive, url: '/archive'}   
-    - {title: Tag, description: tags, url: '/tags'}      
-    - {title: About Me, description: about, url: '/about'}      
-    
-
-# Pagination
-gems: [jekyll-paginate,jekyll-sitemap]
-paginate: 20
-paginate_path: "page/:num/"
-
-
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - Rakefile
+    - .mdspell
+    - CNAME
+    - README.md

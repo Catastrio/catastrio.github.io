@@ -1,40 +1,35 @@
 <!DOCTYPE html>
-<html>
-
-  {% include head.html %}
-
-  <body>
-
-    <span class="mobile btn-mobile-menu">        
-      <div class="nav_container">
-         <nav class="nav-menu-item" style = "float:right">
-            <i class="nav-menu-item">
-              <a href="/#blog" title="{{site.blog_button.description}}" class="blog-button">  {{site.blog_button.title}}
-              </a>
-            </i>
-            {% for item in site.nav %}
-                <i class="nav-menu-item">
-
-                  <a href="{{item.url}}" title="{{item.description}}" class="btn-mobile-menu__icon">
-                      {{item.title}}
-                  </a>
-                </i>
-            {% endfor %}
-          </nav>
-      </div>
-    </span>
-    
-    {% include side-panel.html %}
-
-    <div class="content-wrapper">
-        <div class="content-wrapper__inner">
-            {{ content }}
-            {% include footer.html %}
-        </div>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="{{ site.theme_colour }}">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.title }}">
+  <meta name="keywords" content="{{ site.base_keywords }}{% for category in page.categories %}{{ category }}, {% endfor %}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="{{ site.url }}">
+  <meta name="twitter:title" content="David Young - Web Developer living in Brisbane">
+  <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:image" content="{{ '/images/small.jpg' | prepend: site.baseurl | prepend: site.url }}">
+  <meta name="twitter:site" content="{{ site.twitter_username }}">
+  <meta name="twitter:creator" content="{{ site.twitter_username }}">
+  <title>David Young - Development Blog</title>
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+  <link rel="shortcut icon" href="{{ '/images/favicon.ico?' | prepend: site.baseurl }}" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | prepend: site.url | remove: '.html'  }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url | append: site.baseurl | append: '/feed.xml' }}">
+</head>
+<body>
+  {% include header.html %}
+  <main class="page-content" aria-label="Content" role="main">
+    <div class="wrapper">
+      {{ content }}
     </div>
-    
-    {% include external.html %}
-    
-  </body>
-
+  </main>
+  {% include footer.html %}
+</body>
 </html>
