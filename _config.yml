@@ -14,12 +14,12 @@ base_keywords: "web, developer, blog, web developer, brisbane, australia, david,
 
 # URLs
 baseurl: "" # subpath, eg /blog
-url: "https://davidyoung.tech" # base url
+url: "https://catastrio.github.io" # base url
 theme_colour: "#F4F2F0"
 
 # usernames
-twitter_username: dayvidwhy
-github_username:  dayvidwhy
+twitter_username: Catastrio
+github_username:  Catastrio
 
 # Build settings
 markdown: kramdown
