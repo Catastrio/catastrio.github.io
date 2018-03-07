@@ -1,34 +1,391 @@
----
-layout: default
----
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Martel Sans' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=NTR' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="main-post-list hidden">
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
 
-  <ol class="post-list">
-    {% for post in paginator.posts %}
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a></h2>
-      <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
-      <div class="post-list__meta">        
-        <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
-          <img src="/images/calendar.png" width="20px" /> 
-          {{ post.date | date: "%F"}}</time> 
-        <div class = "tag-img-icon">
-          <img src="/images/tag-icon.svg" width="20px" /> 
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+        
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+            } // End if
+        });
+        });
+    </script>
+    
+    <style>
+      
+        .main-header {
+          font-family: Martel Sans;
+          color: white;
+          font-size: 50px;
+        }
+
+        h2 {
+            font-family: Martel Sans;
+            color: white;
+            font-size: 20px;
+        }
+
+        body {
+            font-family: Roboto;
+        }
+      
+        p {
+          font-size: 18px;
+          font-family: NTR;
+        }
+
+        .parallax {
+            /* The image used */
+            background-image: url("https://i.imgur.com/6x7fyl8.png");
+
+            /* Set a specific height */
+            height: 500px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+      
+        .thick-green-border {
+          border-color: black;
+          border-width: 4px;
+          border-style: solid;
+          border-radius: 50%;
+        }
+      
+        .smaller-image {
+          width: 250px;
+        }
+
+        .portfolio-pic {
+            width: 500px;
+        }
+
+        .tiny-logo {
+            width: 70px;
+        }
+
+        .down-padding {
+            padding-top: 60px;
+        }
+        
+        .small-portrait {
+            width: 200px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .title {
+            color: grey;
+            font-size: 18px;
+        }
+
+        .underscore {
+            border-bottom: 6px solid green;
+            width: 100px;
+            position: center;
+        }
+        
+        .section-padding {
+            padding-top: 90px;
+        }
+        
+        .new-section {
+            padding-bottom: 40px;
+        }
+
+        .btn-circle {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 24px;
+            line-height: 1.47;
+            border-radius: 35px;
+        }
+
+      .card-socials {
+            text-decoration: none;
+            font-size: 22px;
+            color: black;
+        }
+
+
+
+    </style>
+
+<div class="parallax">
+    
+    <div class="text-center down-padding">
+        <img class="smaller-image align-center" src="https://i.imgur.com/uyXAcC5.png" alt="Catastrio logo. ">
+        <h1 class="main-header">Michael Hazell</h1>
+        <h2>Programmer, Writer, Streamer</h2>
+    </div>
+    
+</div>
+
+<div class="container-fluid" id="about">
+        <h1 class="new-section text-center" style="color:black; font-size:50px;">About Me</h1>
+        <div class="row" style="margin-right:20px;">
+                <div style="" class="col-sm-4">
+                  <div class="card">
+                      <img src="https://i.imgur.com/ULxkL89.png" alt="Cassio" style="width:100%">
+                      <h1>Michael Hazell</h1>
+                      <p class="title">Programmer, Writer, Streamer</p>
+                      <p>I'm super interested in learning and collaborating with people who can introduce me to new ideas and concepts.</p>
+                      <a class="card-socials" href="https://github.com/Catastrio/"><i class="fa fa-github"></i></a> 
+                      <a class="card-socials" href="https://twitter.com/catastrio"><i class="fa fa-twitter"></i></a> 
+                      <a class="card-socials" href="https://linkedin.com/in/Catastrio"><i class="fa fa-linkedin"></i></a> 
+                      <a class="card-socials" href="https://www.twitch.tv/catastrio/"><i class="fa fa-twitch"></i></a> 
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <h3 style="text-align:left;padding-bottom:40px;">Personal Info</h3>
+                  <p><b>Name:</b> Michael Hazell</p>
+                  <p><b>Birthday:</b> March 18th 1994</p>
+                  <p><b>Nationality:</b> American</p>
+                  <p><b>Location:</b> Yuma, Arizona</p>
+                  <p><b>Email:</b> CatastrioBusiness@gmail.com</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 style="padding-bottom:40px;">About Myself</h3> 
+                    <p>
+                        Passionate about storytelling and language, I've always been fascinated 
+                        with breaking things apart and figuring out how they work. In recent years
+                        I've grown an interest in writing and the English language. Analyzing
+                        works and writing short stories has been a hobby of mine for some time.
+                        Outside of that, I've grown a massive interest in computers and programming.
+                    </p>
+                    <p>
+                        Programming languages are just as interesting to me as spoken language
+                        and here you can find some of my experiments with both! This site is my
+                        exploration into HTML, CSS and Javascript in the future. In the past, I 
+                        converted an old laptop into a CentOS webserver with a simple LAMP stack
+                        configured on it. This website is inspired by that one. Outside of that
+                        I'll detail my interests in Java, Python, and Webdev in general.
+                    </p>
+                    <p>
+                        Ever curious and always humble, I seek to figure out where I can improve 
+                        and strive to work towards my goals. If you have any input on my active
+                        projects or wish to talk to me about working together, please contact me below.
+                    </p>
+                    <p class="text-center" style="margin-top:20px;"><a class="btn btn-primary" href="#contact" role="button" style="font-family:Roboto;">Contact</a></p>
+                
+                </div>
+              </div>
+</div>
+<div class="container-fluid" style="background-color:rgb(245, 245, 245)" id="knowledge">
+    <h1 class="text-center new-section" style="color:black; font-size:50px;">Knowledge</h1>
+    <div class="row" style="margin-left:20px; margin-right:20px;">
+        <div class="col-sm-4">
+            <p style="font-size:30px;">Python</p>
         </div>
-        <a href="/tags">
-          <div class = "post-list-icon-mate">
-            <span class="post-list__meta--tags-right">{{ post.tags }}</span>
-          </div>
-          <div class = "post-list-small-mate">
-          <a class="btn-border-small" href={{ post.url }}>阅读全文 » </a>
-          </div>
-      </div>
-      <hr class="post-list__divider" />
-    </li>
-    {% endfor %}
-  </ol>
+        <div class="col-sm-4">
+            <p style="font-size:25px;">Primary</p>
+        </div>
+        <div class="col-sm-4">
+            <p>
+                Python is my biggest interest at the moment. It has expanded my knowledge of programming
+                from just making basic, simple programs in Java to exploring ways to make programs
+                interact with each other, automate simple tasks, or calculate useful things.
+            </p>
+        </div>
+    </div>
+    <hr></hr>
+    <div class="row" style="margin-left:20px; margin-right:20px;">
+            <div class="col-sm-4">
+                <p style="font-size:30px;">Java</h2>
+            </div>
+            <div class="col-sm-4">
+                <p style="font-size:25px;">Secondary</p>
+            </div>
+            <div class="col-sm-4">
+                <p>
+                    My introduction to programming, Java is the language that got
+                    me started. Common OOP concepts like encapsulation and modularity
+                    interested me a ton. The language interests me because OOP concepts
+                    seem to work best in a team environment. Additionally, I have a fairl easy
+                    time visualizing the development process of a program so the division of
+                    labor in a large project seems fairly easy in Java.
+                </p>
+            </div>
+    </div>
+    <hr></hr>
+    <div class="row" style="margin-left:20px; margin-right:20px;">
+            <div class="col-sm-4">
+                <p style="font-size:30px;">Webdev</p>
+            </div>
+            <div class="col-sm-4">
+                <p style="font-size:25px;">Tertiary</p>
+            </div>
+            <div class="col-sm-4">
+                <p>
+                    I've started doing challenges on FreeCodeCamp which has been immensely helpful
+                    in learning CSS, HTML and Javascript in the future. Combining my interests in 
+                    design, programming and usability, I've found front-end web development to be
+                    a lot of fun.
+                </p>
+            </div>
+    </div>
+    <hr></hr>
+    <div class="row" style="margin-left:20px; margin-right:20px;">
+            <div class="col-sm-4">
+                <p style="font-size:30px;">Linux/Git</p>
+            </div>
+            <div class="col-sm-4">
+                <p style="font-size:25px;">Passively Learning</p>
+            </div>
+            <div class="col-sm-4">
+                <p>
+                    Setting up a LAMP stack on an old laptop of mine turned out to be an absolute
+                    blast. While not being my primary goal in learning programming, I used the opportunity
+                    to familiarize myself with Linux and Git.
+                </p>
+            </div>
+    </div>
+    <hr></hr>
+</div>
+<div class="container-fluid" style="background-color:rgb(245, 245, 245)" id="myskills">
+    <h1 class="text-center new-section" style="color:black; font-size:50px;">My Skills</h1>
+    <div class="col-sm-6 text-left">
+        <p style="font-size:30px; padding-bottom:60px; padding-top:40px;">Professional Skills</p>
+        <div class="col-sm-6 text-left">
+           <p><i class="fa fa-check"></i> Analytical thinker</p>
+           <p><i class="fa fa-check"></i> Bootstrap</p>
+           <p><i class="fa fa-check"></i> CodeVS</p>
+           <p><i class="fa fa-check"></i> Oracle VM</p>
+        </div>
+        <div class="col-sm-6 text-left">
+            <p><i class="fa fa-check"></i> CentOS/Linux</p>
+            <p><i class="fa fa-check"></i> Codepen</p>
+            <p><i class="fa fa-check"></i> Git</p>
+            <p><i class="fa fa-check"></i> Quick Learner</p>
+        </div>
+    </div>
+    <div class="col-sm-6 text-left">
+        <p style="font-size:30px; padding-bottom:60px; padding-top:40px;">Completed Projects</p>
+        <div class="col-sm-4 text-center">
+            <a class="btn btn-primary btn-circle" href="https://github.com/Catastrio/"><i class="fa fa-github"></i></a>
+            <h1>0</h1>
+            <p><b>Completed Projects</b></p>
+        </div>
+        <div class="col-sm-4 text-center">
+            <a class="btn btn-primary btn-circle" href="https://catastrio-writes.tumblr.com"><i class="fa fa-tumblr"></i></a>
+            <h1>0</h1>
+            <p><b>Completed Writings</b></p>  
+        </div>
+        <div class="col-sm-4 text-center">
+            <a class="btn btn-primary btn-circle" href="https://catastrio-writes.tumblr.com"><i class="fa fa-link"></i></a>
+            <h1>0</h1>
+            <p><b>Valuable Resources</b></p>  
+        </div>
+    </div>
 
-  {% include pagination.html %}
-
+    
+    <div class="col-sm-6 text-left">
+        <p style="font-size:30px; padding-bottom:60px; padding-top:40px;">Personal Skills</p>
+        <div class="col-sm-6 text-left">
+            <p><i class="fa fa-check"></i> Cooperative</p>
+            <p><i class="fa fa-check"></i> Creative</p>
+            <p><i class="fa fa-check"></i> Organized</p>
+            <p><i class="fa fa-check"></i> Goal Oriented</p>
+        </div>
+        <div class="col-sm-6 text-left">
+            <p><i class="fa fa-check"></i> Self Motivating</p>
+            <p><i class="fa fa-check"></i> Active Learner</p>
+            <p><i class="fa fa-check"></i> Public Speaking</p>
+            <p><i class="fa fa-check"></i> Social</p>
+        </div>
+    </div>
+    <div class="col-sm-6 text-left" style="padding-bottom:60px;">
+        <p style="font-size:30px; padding-bottom:60px; padding-top:40px;">Upcoming Projects</p>
+        <p><b>Twitch Follower Grabber</b></p>
+        <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60"
+                aria-valuemin="0" aria-valuemax="100" style="width:60%">
+                  60% Complete
+                </div>
+        </div>
+        <p><b>Burning Wheel Character Builder</b></p>
+        <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5"
+                aria-valuemin="0" aria-valuemax="100" style="width:5%">
+                  5% Complete
+                </div>
+        </div>
+        <p><b>Random Village Generator</b></p>
+        <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                
+                </div>
+        </div>
+        <p><b>Twitch Channel Incentives</b></p>
+        <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                
+                </div>
+        </div>
+    </div>
+</div>
+<div class="parallax">
+    <div class="text-center down-padding" id="contact">
+        <h1 class="text-center" style="color:white; margin-top:-30px; font-size:50px;">Contact Me</h1>
+        <hr>
+        <h2 style="font-size:30px;">Want to work with me?</h2>
+        <p style="color:white;">
+            I'd love to hear from you! I'm open to most opportunities that involve collaborating or building something new. Additionally, I'm always open to and looking for
+            more learning experiences!
+        </p>
+        <p style="color:white;">
+            Thank you for taking the time to read over my page. I hope I have the opportunity to talk to you about my upcoming projects!
+        </p>
+        <div class="col-sm-6 text-center" style="padding-top:30px;">
+            <p style="color:white;">
+                Social Profiles:
+            </p>
+            <a class="btn btn-primary btn-circle" href="https://github.com/Catastrio/"><i class="fa fa-github"></i></a>
+            <a class="btn btn-primary btn-circle" href="https://twitter.com/catastrio"><i class="fa fa-twitter"></i></a>
+            <a class="btn btn-primary btn-circle" href="https://linkedin.com/in/Catastrio"><i class="fa fa-linkedin"></i></a>
+            <a class="btn btn-primary btn-circle" href="https://www.twitch.tv/catastrio/"><i class="fa fa-twitch"></i></a>
+        </div>
+        <div class="col-sm-6 text-center" style="padding-top:30px;">
+            <p style="color:white;">
+                E-Mail:
+            </p>
+            <p style="color:white;">
+                CatastrioBusiness@gmail.com
+            </p>
+        </div>
+    </div>
 </div>
